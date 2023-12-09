@@ -1,0 +1,12 @@
+F:\Vrushali\AynoSoftEShopApp\AynoSoftEShopApp\AynoSoftEShopApp.Models\bin\Debug\net6.0\AynoSoftEShopApp.Models.deps.json
+F:\Vrushali\AynoSoftEShopApp\AynoSoftEShopApp\AynoSoftEShopApp.Models\bin\Debug\net6.0\AynoSoftEShopApp.Models.dll
+F:\Vrushali\AynoSoftEShopApp\AynoSoftEShopApp\AynoSoftEShopApp.Models\bin\Debug\net6.0\AynoSoftEShopApp.Models.pdb
+F:\Vrushali\AynoSoftEShopApp\AynoSoftEShopApp\AynoSoftEShopApp.Models\obj\Debug\net6.0\AynoSoftEShopApp.Models.csproj.AssemblyReference.cache
+F:\Vrushali\AynoSoftEShopApp\AynoSoftEShopApp\AynoSoftEShopApp.Models\obj\Debug\net6.0\AynoSoftEShopApp.Models.GeneratedMSBuildEditorConfig.editorconfig
+F:\Vrushali\AynoSoftEShopApp\AynoSoftEShopApp\AynoSoftEShopApp.Models\obj\Debug\net6.0\AynoSoftEShopApp.Models.AssemblyInfoInputs.cache
+F:\Vrushali\AynoSoftEShopApp\AynoSoftEShopApp\AynoSoftEShopApp.Models\obj\Debug\net6.0\AynoSoftEShopApp.Models.AssemblyInfo.cs
+F:\Vrushali\AynoSoftEShopApp\AynoSoftEShopApp\AynoSoftEShopApp.Models\obj\Debug\net6.0\AynoSoftEShopApp.Models.csproj.CoreCompileInputs.cache
+F:\Vrushali\AynoSoftEShopApp\AynoSoftEShopApp\AynoSoftEShopApp.Models\obj\Debug\net6.0\AynoSoftEShopApp.Models.dll
+F:\Vrushali\AynoSoftEShopApp\AynoSoftEShopApp\AynoSoftEShopApp.Models\obj\Debug\net6.0\refint\AynoSoftEShopApp.Models.dll
+F:\Vrushali\AynoSoftEShopApp\AynoSoftEShopApp\AynoSoftEShopApp.Models\obj\Debug\net6.0\AynoSoftEShopApp.Models.pdb
+F:\Vrushali\AynoSoftEShopApp\AynoSoftEShopApp\AynoSoftEShopApp.Models\obj\Debug\net6.0\ref\AynoSoftEShopApp.Models.dll
