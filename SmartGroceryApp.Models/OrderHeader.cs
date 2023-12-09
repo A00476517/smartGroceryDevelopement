@@ -12,7 +12,7 @@ namespace SmartGroceryApp.Models
     public class OrderHeader
     {
         public int Id { get; set; }
-
+        [ValidateNever]
         public string ApplicationUserId { get; set; }
         [ForeignKey("ApplicationUserId")]
         [ValidateNever]
@@ -69,10 +69,12 @@ namespace SmartGroceryApp.Models
 		public string CardHolderName { get; set; }
 
 		[Required]
+        [CreditCard]
 		public string CardNumber { get; set; }
 
 
 		[Required]
+        [RegularExpression("^(0[1-9]|1[0-2])/?([0-9]{4}|[0-9]{2})$")]
 		public string CardExpiry { get; set; }
 
 		[Required]

@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "VJGtyQgzGkrq2gm2Mv0wP2593R7FJxwo8F2yMjuxPVQ=",
+  "Source": "SmartGroceryApp.Api",
+  "BasePath": "_content/SmartGroceryApp.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

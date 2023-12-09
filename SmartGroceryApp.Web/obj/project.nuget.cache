@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Ii9t5tZs4CF/q6p8t+bOeDxm+Z1nQhZHT0lRQ3zRT5KMlnOFOY6BJMumSS8iMeuyVhKOyTLbMUylTsxKwFprtQ==",
+  "dgSpecHash": "Pqejwgo/5nc2e9nNIbC5mCGPh1Ftv0ZgEyjbw1gkeC+1eBPsSDuuzXS6MoU3HUAymKk/Pn8qSAiSDl48yi/izw==",
   "success": true,
-  "projectFilePath": "D:\\Canada\\SMU_MSCDA\\software_developement\\project1\\Implementation\\ASPNET\\06_12_2023\\SmartGroceryApp.Web\\SmartGroceryApp.Web.csproj",
+  "projectFilePath": "F:\\Vrushali\\AynoSoftEShopApp\\SmartGroceryAppVrushali\\SmartGroceryApp.Web\\SmartGroceryApp.Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\LENOVO\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\LENOVO\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

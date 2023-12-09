@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Canada\\SMU_MSCDA\\software_developement\\project1\\Implementation\\ASPNET\\06_12_2023\\SmartGroceryApp.Utility\\SmartGroceryApp.Utility.csproj",
+      "projectUniqueName": "F:\\Vrushali\\AynoSoftEShopApp\\SmartGroceryAppVrushali\\SmartGroceryApp.Utility\\SmartGroceryApp.Utility.csproj",
       "projectName": "SmartGroceryApp.Utility",
-      "projectPath": "D:\\Canada\\SMU_MSCDA\\software_developement\\project1\\Implementation\\ASPNET\\06_12_2023\\SmartGroceryApp.Utility\\SmartGroceryApp.Utility.csproj",
+      "projectPath": "F:\\Vrushali\\AynoSoftEShopApp\\SmartGroceryAppVrushali\\SmartGroceryApp.Utility\\SmartGroceryApp.Utility.csproj",
       "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-      "outputPath": "D:\\Canada\\SMU_MSCDA\\software_developement\\project1\\Implementation\\ASPNET\\06_12_2023\\SmartGroceryApp.Utility\\obj\\",
+      "outputPath": "F:\\Vrushali\\AynoSoftEShopApp\\SmartGroceryAppVrushali\\SmartGroceryApp.Utility\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -61,7 +61,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

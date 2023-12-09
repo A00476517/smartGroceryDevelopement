@@ -1,0 +1,12 @@
+F:\Vrushali\AynoSoftEShopApp\SmartGroceryAppVrushali\SmartGroceryApp.Utility\bin\Release\net6.0\SmartGroceryApp.Utility.deps.json
+F:\Vrushali\AynoSoftEShopApp\SmartGroceryAppVrushali\SmartGroceryApp.Utility\bin\Release\net6.0\SmartGroceryApp.Utility.dll
+F:\Vrushali\AynoSoftEShopApp\SmartGroceryAppVrushali\SmartGroceryApp.Utility\bin\Release\net6.0\SmartGroceryApp.Utility.pdb
+F:\Vrushali\AynoSoftEShopApp\SmartGroceryAppVrushali\SmartGroceryApp.Utility\obj\Release\net6.0\SmartGroceryApp.Utility.csproj.AssemblyReference.cache
+F:\Vrushali\AynoSoftEShopApp\SmartGroceryAppVrushali\SmartGroceryApp.Utility\obj\Release\net6.0\SmartGroceryApp.Utility.GeneratedMSBuildEditorConfig.editorconfig
+F:\Vrushali\AynoSoftEShopApp\SmartGroceryAppVrushali\SmartGroceryApp.Utility\obj\Release\net6.0\SmartGroceryApp.Utility.AssemblyInfoInputs.cache
+F:\Vrushali\AynoSoftEShopApp\SmartGroceryAppVrushali\SmartGroceryApp.Utility\obj\Release\net6.0\SmartGroceryApp.Utility.AssemblyInfo.cs
+F:\Vrushali\AynoSoftEShopApp\SmartGroceryAppVrushali\SmartGroceryApp.Utility\obj\Release\net6.0\SmartGroceryApp.Utility.csproj.CoreCompileInputs.cache
+F:\Vrushali\AynoSoftEShopApp\SmartGroceryAppVrushali\SmartGroceryApp.Utility\obj\Release\net6.0\SmartGroceryApp.Utility.dll
+F:\Vrushali\AynoSoftEShopApp\SmartGroceryAppVrushali\SmartGroceryApp.Utility\obj\Release\net6.0\refint\SmartGroceryApp.Utility.dll
+F:\Vrushali\AynoSoftEShopApp\SmartGroceryAppVrushali\SmartGroceryApp.Utility\obj\Release\net6.0\SmartGroceryApp.Utility.pdb
+F:\Vrushali\AynoSoftEShopApp\SmartGroceryAppVrushali\SmartGroceryApp.Utility\obj\Release\net6.0\ref\SmartGroceryApp.Utility.dll

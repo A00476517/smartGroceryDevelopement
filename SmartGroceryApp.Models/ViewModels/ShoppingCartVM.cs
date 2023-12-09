@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc.Rendering;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,11 +10,12 @@ namespace SmartGroceryApp.Models.ViewModels
 {
     public class ShoppingCartVM
     {
+        [ValidateNever]
         public IEnumerable<ShoppingCart> ShoppingCartList { get; set; }
 
         public OrderHeader OrderHeader { get; set; }
-
-		public IEnumerable<SelectListItem> CardTypeList { get; set; }
+        [ValidateNever]
+        public IEnumerable<SelectListItem> CardTypeList { get; set; }
 
 		// public double OrderTotal { get; set; }
 

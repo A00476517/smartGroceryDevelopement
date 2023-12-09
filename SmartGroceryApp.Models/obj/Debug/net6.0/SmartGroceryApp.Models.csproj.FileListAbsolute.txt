@@ -34,3 +34,15 @@ D:\Canada\SMU_MSCDA\software_developement\project1\Implementation\ASPNET\06_12_2
 D:\Canada\SMU_MSCDA\software_developement\project1\Implementation\ASPNET\06_12_2023\SmartGroceryApp.Models\obj\Debug\net6.0\refint\SmartGroceryApp.Models.dll
 D:\Canada\SMU_MSCDA\software_developement\project1\Implementation\ASPNET\06_12_2023\SmartGroceryApp.Models\obj\Debug\net6.0\SmartGroceryApp.Models.pdb
 D:\Canada\SMU_MSCDA\software_developement\project1\Implementation\ASPNET\06_12_2023\SmartGroceryApp.Models\obj\Debug\net6.0\ref\SmartGroceryApp.Models.dll
+F:\Vrushali\AynoSoftEShopApp\SmartGroceryAppVrushali\SmartGroceryApp.Models\bin\Debug\net6.0\SmartGroceryApp.Models.deps.json
+F:\Vrushali\AynoSoftEShopApp\SmartGroceryAppVrushali\SmartGroceryApp.Models\bin\Debug\net6.0\SmartGroceryApp.Models.dll
+F:\Vrushali\AynoSoftEShopApp\SmartGroceryAppVrushali\SmartGroceryApp.Models\bin\Debug\net6.0\SmartGroceryApp.Models.pdb
+F:\Vrushali\AynoSoftEShopApp\SmartGroceryAppVrushali\SmartGroceryApp.Models\obj\Debug\net6.0\SmartGroceryApp.Models.csproj.AssemblyReference.cache
+F:\Vrushali\AynoSoftEShopApp\SmartGroceryAppVrushali\SmartGroceryApp.Models\obj\Debug\net6.0\SmartGroceryApp.Models.GeneratedMSBuildEditorConfig.editorconfig
+F:\Vrushali\AynoSoftEShopApp\SmartGroceryAppVrushali\SmartGroceryApp.Models\obj\Debug\net6.0\SmartGroceryApp.Models.AssemblyInfoInputs.cache
+F:\Vrushali\AynoSoftEShopApp\SmartGroceryAppVrushali\SmartGroceryApp.Models\obj\Debug\net6.0\SmartGroceryApp.Models.AssemblyInfo.cs
+F:\Vrushali\AynoSoftEShopApp\SmartGroceryAppVrushali\SmartGroceryApp.Models\obj\Debug\net6.0\SmartGroceryApp.Models.csproj.CoreCompileInputs.cache
+F:\Vrushali\AynoSoftEShopApp\SmartGroceryAppVrushali\SmartGroceryApp.Models\obj\Debug\net6.0\SmartGroceryApp.Models.dll
+F:\Vrushali\AynoSoftEShopApp\SmartGroceryAppVrushali\SmartGroceryApp.Models\obj\Debug\net6.0\refint\SmartGroceryApp.Models.dll
+F:\Vrushali\AynoSoftEShopApp\SmartGroceryAppVrushali\SmartGroceryApp.Models\obj\Debug\net6.0\SmartGroceryApp.Models.pdb
+F:\Vrushali\AynoSoftEShopApp\SmartGroceryAppVrushali\SmartGroceryApp.Models\obj\Debug\net6.0\ref\SmartGroceryApp.Models.dll

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Canada\\SMU_MSCDA\\software_developement\\project1\\Implementation\\ASPNET\\06_12_2023\\SmartGroceryApp.Models\\SmartGroceryApp.Models.csproj": {}
+    "F:\\Vrushali\\AynoSoftEShopApp\\SmartGroceryAppVrushali\\SmartGroceryApp.Models\\SmartGroceryApp.Models.csproj": {}
   },
   "projects": {
-    "D:\\Canada\\SMU_MSCDA\\software_developement\\project1\\Implementation\\ASPNET\\06_12_2023\\SmartGroceryApp.Models\\SmartGroceryApp.Models.csproj": {
+    "F:\\Vrushali\\AynoSoftEShopApp\\SmartGroceryAppVrushali\\SmartGroceryApp.Models\\SmartGroceryApp.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Canada\\SMU_MSCDA\\software_developement\\project1\\Implementation\\ASPNET\\06_12_2023\\SmartGroceryApp.Models\\SmartGroceryApp.Models.csproj",
+        "projectUniqueName": "F:\\Vrushali\\AynoSoftEShopApp\\SmartGroceryAppVrushali\\SmartGroceryApp.Models\\SmartGroceryApp.Models.csproj",
         "projectName": "SmartGroceryApp.Models",
-        "projectPath": "D:\\Canada\\SMU_MSCDA\\software_developement\\project1\\Implementation\\ASPNET\\06_12_2023\\SmartGroceryApp.Models\\SmartGroceryApp.Models.csproj",
+        "projectPath": "F:\\Vrushali\\AynoSoftEShopApp\\SmartGroceryAppVrushali\\SmartGroceryApp.Models\\SmartGroceryApp.Models.csproj",
         "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-        "outputPath": "D:\\Canada\\SMU_MSCDA\\software_developement\\project1\\Implementation\\ASPNET\\06_12_2023\\SmartGroceryApp.Models\\obj\\",
+        "outputPath": "F:\\Vrushali\\AynoSoftEShopApp\\SmartGroceryAppVrushali\\SmartGroceryApp.Models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -65,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -24,6 +24,9 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using System.Diagnostics.Metrics;
+using System.Text.RegularExpressions;
 
 namespace SmartGroceryApp.Web.Areas.Identity.Pages.Account
 {
@@ -116,24 +119,23 @@ namespace SmartGroceryApp.Web.Areas.Identity.Pages.Account
 
 
             [Required]
-            [RegularExpression("^[a-zA-Z]*$", ErrorMessage = "Only Alphabets Allowed")]
-            public string Name {  get; set; }
+            [RegularExpression("^[a-zA-Z ]*$", ErrorMessage = "Only Alphabets Allowed")]
+            public string Name { get; set; }
             [Required]
-            [RegularExpression("^[a-zA-Z]*$", ErrorMessage = "Only Alphabets Allowed")]
+            [RegularExpression("^[a-zA-Z ]*$", ErrorMessage = "Only Alphabets Allowed")]
             public string? StreetAddress { get; set; }
             [Required]
-            [RegularExpression("^[a-zA-Z]*$", ErrorMessage = "Only Alphabets Allowed")]
+            [RegularExpression("^[a-zA-Z ]*$", ErrorMessage = "Only Alphabets Allowed")]
             public string? City { get; set; }
             [Required]
-            [RegularExpression("^[a-zA-Z]*$", ErrorMessage = "Only Alphabets Allowed")]
-            [Display(Name= "Province")]
+            [RegularExpression("^[a-zA-Z ]*$", ErrorMessage = "Only Alphabets Allowed")]
+            [Display(Name = "Province")]
             public string? State { get; set; }
             [Required]
             public string? PostalCode { get; set; }
             [Required]
-            [StringLength(11, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 11)]
             public string? PhoneNumber { get; set; }
-            [Required]
+ 
             public int? CompanyId { get; set; }
             [Required]
             public int? CountryId { get; set; }
@@ -193,6 +195,53 @@ namespace SmartGroceryApp.Web.Areas.Identity.Pages.Account
 
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
+
+            Input.CountryList = _unitOfWork.Country.GetAll().Select(i => new SelectListItem
+            {
+                Text = i.Name,
+                Value = i.Id.ToString()
+            });
+
+            var countryName = Input.CountryList.Where(x => x.Value == Input.CountryId.ToString()).FirstOrDefault();
+
+            if (ModelState.IsValid)
+            {
+                if (!IsValidPostCode(Input))
+                {
+                    if(countryName.Text=="US")
+                    {
+                        ModelState.AddModelError("Input.PostalCode", "The  postcode appears to be invalid for USA");
+                        return Page();
+                    }
+                    else if(countryName.Text== "Canada")
+                    {
+                        ModelState.AddModelError("Input.PostalCode", "The  postcode appears to be invalid for Canada");
+                        return Page();
+                    }
+
+                }
+
+            }
+
+            if (ModelState.IsValid)
+            {
+                if (!IsValidPhoneNumber(Input))
+                {
+                    if (countryName.Text == "US")
+                    {
+                        ModelState.AddModelError("Input.PhoneNumber", "The  PhoneNumber appears to be invalid for USA");
+                        return Page();
+                    }
+                    else if (countryName.Text == "Canada")
+                    {
+                        ModelState.AddModelError("Input.PhoneNumber", "The  PhoneNumber appears to be invalid for Canada");
+                        return Page();
+                    }
+
+                }
+
+            }
+
             returnUrl ??= Url.Content("~/");
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
@@ -209,7 +258,7 @@ namespace SmartGroceryApp.Web.Areas.Identity.Pages.Account
                 user.PostalCode = Input.PostalCode;
                 user.PhoneNumber = Input.PhoneNumber;
 
-                if(Input.Role== SD.Role_Company)
+                if (Input.Role == SD.Role_Company)
                 {
                     user.CompanyId = Input.CompanyId;
                 }
@@ -248,18 +297,18 @@ namespace SmartGroceryApp.Web.Areas.Identity.Pages.Account
                     }
                     else
                     {
-                        if(User.IsInRole(SD.Role_Admin)) 
+                        if (User.IsInRole(SD.Role_Admin))
                         {
 
                             TempData["success"] = "New User Created SuccessFully";
-                        
+
                         }
                         else
                         {
                             await _signInManager.SignInAsync(user, isPersistent: false);
                         }
 
-                        
+
                         return LocalRedirect(returnUrl);
                     }
                 }
@@ -268,7 +317,7 @@ namespace SmartGroceryApp.Web.Areas.Identity.Pages.Account
                     ModelState.AddModelError(string.Empty, error.Description);
                 }
             }
-
+          
             // If we got this far, something failed, redisplay form
             return Page();
         }
@@ -295,5 +344,34 @@ namespace SmartGroceryApp.Web.Areas.Identity.Pages.Account
             }
             return (IUserEmailStore<IdentityUser>)_userStore;
         }
+
+private static IDictionary<string, string> countryPostCodeRegex = new Dictionary<string, string>
+        {
+            { "US", "^[0-9]{5}(?:-[0-9]{4})?$" },
+            { "Canada", "[ABCEGHJKLMNPRSTVXY][0-9][ABCEGHJKLMNPRSTVWXYZ] ?[0-9][ABCEGHJKLMNPRSTVWXYZ][0-9]" },
+        };
+
+        private static IDictionary<string, string> countryPhoneNumberRegex = new Dictionary<string, string>
+        {
+            { "US", "^[2-9]{3}-[0-9]{3}-[0-9]{4}$" },
+            { "Canada", "^([2-9]{1}[0-9]{2})(([2-9]{1})(1[0,2-9]{1}|[0,2-9]{1}[0-9]{1}))([0-9]{4})$" },
+        };
+
+        private bool IsValidPostCode(InputModel viewModel)
+        {
+            var countryName = Input.CountryList.Where(x => x.Value == Input.CountryId.ToString()).FirstOrDefault();
+            var regexString = countryPostCodeRegex[countryName.Text];
+            var regexMatch = Regex.Match(viewModel.PostalCode, regexString, RegexOptions.IgnoreCase);
+            return regexMatch.Success;
+        }
+
+        private bool IsValidPhoneNumber(InputModel viewModel)
+        {
+            var countryName = Input.CountryList.Where(x => x.Value == Input.CountryId.ToString()).FirstOrDefault();
+            var regexString = countryPostCodeRegex[countryName.Text];
+            var regexMatch = Regex.Match(viewModel.PostalCode, regexString, RegexOptions.IgnoreCase);
+            return regexMatch.Success;
+        }
+
     }
 }

@@ -10,6 +10,7 @@ using Stripe.Checkout;
 using System;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Text.RegularExpressions;
 
 namespace SmartGroceryApp.Web.Areas.Customer.Controllers
 {
@@ -31,6 +32,7 @@ namespace SmartGroceryApp.Web.Areas.Customer.Controllers
             _unitOfWork = unitOfWork;
          
         }
+
 
         public IActionResult Index()
         {
@@ -123,7 +125,9 @@ namespace SmartGroceryApp.Web.Areas.Customer.Controllers
 		public IActionResult SummaryPOST()
 		{
 
-			var claimsIdentity = (ClaimsIdentity)User.Identity;
+            
+
+            var claimsIdentity = (ClaimsIdentity)User.Identity;
 			var userId = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier).Value;
 
 
@@ -136,16 +140,69 @@ namespace SmartGroceryApp.Web.Areas.Customer.Controllers
 				ShoppingCartVM.OrderHeader.OrderTotal += (cart.Price * cart.Count);
 			}
 
+            ShoppingCartVM.CardTypeList = _unitOfWork.CardType.GetAll().Select(i => new SelectListItem
+            {
+                Text = i.Name,
+                Value = i.Id.ToString()
+            });
 
-			if (ModelState.IsValid)
+
+
+            ShoppingCartVM.OrderHeader.OrderDate = System.DateTime.Now;
+            ShoppingCartVM.OrderHeader.ApplicationUserId = userId;
+
+
+            ApplicationUser applicationUser = _unitOfWork.ApplicationUser.Get(u => u.Id == userId);
+
+
+            if (ModelState.IsValid)
+            {
+                var cardtype = ShoppingCartVM.CardTypeList.Where(x => x.Value == ShoppingCartVM.OrderHeader.CardType).FirstOrDefault();
+                if (cardtype.Text == "Master Card" || cardtype.Text == "VISA")
+                {
+                    if (ShoppingCartVM.OrderHeader.CardNumber.Length != 16)
+                    {
+                        ModelState.AddModelError("ShoppingCartVM.OrderHeader.CardNumber", "Master Card or Visa  card lenght should be 16 digits");
+                        return View(ShoppingCartVM);
+                    }
+
+                }
+                else
+                {
+                    if (ShoppingCartVM.OrderHeader.CardNumber.Length != 15)
+                    {
+                        ModelState.AddModelError("CardNumber", "Master Card or Visa  card lenght should be 16 digits");
+                        return View(ShoppingCartVM);
+                    }
+                }
+
+                var cardexpirymonth = Convert.ToInt32(ShoppingCartVM.OrderHeader.CardExpiry.Split('/')[0]);
+
+                var cardexpiryyear = Convert.ToInt32(ShoppingCartVM.OrderHeader.CardExpiry.Split('/')[1]);
+                if (!(cardexpiryyear>=2016 && cardexpiryyear<=2034))
+                {
+
+                    ModelState.AddModelError("OrderHeader.CardExpiry", "Expiry year between 2016 to 2034");
+                    return View(ShoppingCartVM);
+
+                }
+
+                if (!(cardexpirymonth>=0 && cardexpirymonth <13))
+                {
+
+                    ModelState.AddModelError("OrderHeader.CardExpiry", "Expiry month between 01 to 12");
+                    return View(ShoppingCartVM);
+
+                }
+
+
+
+            }
+
+
+            if (ModelState.IsValid)
             {
 
-
-                ShoppingCartVM.OrderHeader.OrderDate = System.DateTime.Now;
-                ShoppingCartVM.OrderHeader.ApplicationUserId = userId;
-
-
-                ApplicationUser applicationUser = _unitOfWork.ApplicationUser.Get(u => u.Id == userId);
 
 
                 //ShoppingCartVM.OrderHeader.Name = ShoppingCartVM.OrderHeader.ApplicationUser.Name;
@@ -209,7 +266,7 @@ namespace SmartGroceryApp.Web.Areas.Customer.Controllers
                         StripeConfiguration.ApiKey = "sk_test_51OJhbAEG1zYwB6GkhD5Gcqfp4vtM0m5l8qLgd6fevhjIxoFwcAdC1UGOV8m19PYz0QME0cPuKkcT9dMgsSRaZLew00UcE2FnrK";
 
 
-                        var domain = "https://localhost:7104/";
+                        var domain = "https://smartgroceryappweb20231209093526.azurewebsites.net/";
                         var options = new SessionCreateOptions
                         {
                             SuccessUrl = domain + $"customer/cart/OrderConfirmation?id={ShoppingCartVM.OrderHeader.Id}",
